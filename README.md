@@ -56,18 +56,18 @@ Step 6:  If press 5 then
 # Explain of Algorithm
 Product list:
                        
-		       Name     -    Quantity          -      Net Price       -    Sell Price
-                       iPhone   -         1            -        20,500        -       24,999
-                       iPhone   -         2            -        20,500x2      -       24,999x2 
+		       Name     -      Quantity          -      Net Price       -    Sell Price
+                       iPhone   -         1              -        20,500        -       24,999
+                       iPhone   -         2              -        20,500x2      -       24,999x2 
 Billing:
                   
-		  Product Name    –       Product Quantity      –     Total Amount
-                       iPhone             -                     2                      -          49,998
+		  Product Name         –       Product Quantity      –     Total Amount
+                    iPhone             -             2               -          49,998
 
 Profit:   
                    
 		   Profit (Sell Price – Net Price) = (49,998 – 41,000) = 8,998 tk.
-                   thus, Profit = 8,998 tk
+                                      Thus, Profit = 8,998 tk
 
      Here, 
                 Product Name: iPhone
