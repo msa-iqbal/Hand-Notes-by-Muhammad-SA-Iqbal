@@ -38,14 +38,14 @@ Step 4:  If press 3 then
 		     Input : 
                                 Product Name
                                 Product Quantity
-                   Output: 
-                              Product Remaining Quantity
-                              Total Sell Price
+                     Output: 
+                                Product Remaining Quantity
+                                Total Sell Price
 				
 Step 5:   If press 4 then
 	
-	     Output:
-	              Profit
+	             Output:
+	                        Profit
 		      
 
 Step 6:  If press 5 then
@@ -57,17 +57,17 @@ Step 6:  If press 5 then
 Product list:
                        
 		        Name     -      Quantity          -      Net Price       -    Sell Price
-                     iPhone   -         1              -        20,500        -       24,999
-                     iPhone   -         2              -        20,500x2      -       24,999x2 
+                        iPhone   -         1              -        20,500        -       24,999
+                        iPhone   -         2              -        20,500x2      -       24,999x2 
 Billing:
                   
 		  Product Name         –       Product Quantity      –     Total Amount
-                  iPhone             -             2               -          49,998
+                    iPhone             -             2               -          49,998
 
 Profit:   
                    
 		   Profit (Sell Price – Net Price) = (49,998 – 41,000) = 8,998 tk.
-                                   Thus, Profit = 8,998 tk
+                                      Thus, Profit = 8,998 tk
 
      Here, 
                 Product Name: iPhone
