@@ -56,7 +56,7 @@ Step 6:  If press 5 then
 # Explain of Algorithm
 Product list:
                        
-		       Name     -      Quantity          -      Net Price       -    Sell Price
+		        Name     -      Quantity          -      Net Price       -    Sell Price
                        iPhone   -         1              -        20,500        -       24,999
                        iPhone   -         2              -        20,500x2      -       24,999x2 
 Billing:
