@@ -8,7 +8,6 @@ Product Selling: Selling product with product's quantity and sell price and cust
 Product Profit: Showing profit by selled products.
 
 # Steps/Algorithm:
-================================================================
 Step 1:  Showing 5 Message:
                             Press 1 to Add a Products
                             Press 2 to View the Products
