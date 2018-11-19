@@ -14,12 +14,14 @@ Step 1:  Showing 5 Message:
                             Press 3 to Sell a Products
                             Press 4 to View Profit
                             Press 5 to Exit
+			    
 Step 2:  If press 1 then 
                       Input:
                                  Product Name 
                                  Product Quantity
                                  Product Net Price
                                  Product Sell Price
+				 
                                  
 Step 3:  If press 2 then
                        Output:
@@ -27,6 +29,7 @@ Step 3:  If press 2 then
                                      Product Quantity
                                      Product Net Price
                                      Product Sell Price
+				     
 Step 4:  If press 3 then
                      Input : 
                                 Product Name
@@ -34,12 +37,15 @@ Step 4:  If press 3 then
                   Output: 
                                 Product Remaining Quantity
                                 Total Sell Price
+				
 Step 5:   If press 4 then
 	Output:
 	              Profit
+		      
 
 Step 6:  If press 5 then
                  Close the program
+		 
                  
 # Explain of Algorithm
 Product list:
