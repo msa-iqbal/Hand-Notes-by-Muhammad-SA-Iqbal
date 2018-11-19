@@ -9,6 +9,7 @@ Product Profit: Showing profit by selled products.
 
 # Steps/Algorithm:
 Step 1:  Showing 5 Message:
+
                             Press 1 to Add a Products
                             Press 2 to View the Products
                             Press 3 to Sell a Products
@@ -16,7 +17,8 @@ Step 1:  Showing 5 Message:
                             Press 5 to Exit
 			    
 Step 2:  If press 1 then 
-                      Input:
+                      
+		      Input:
                                  Product Name 
                                  Product Quantity
                                  Product Net Price
@@ -24,40 +26,47 @@ Step 2:  If press 1 then
 				 
                                  
 Step 3:  If press 2 then
-                       Output:
-                                     Product Name
-                                     Product Quantity
-                                     Product Net Price
-                                     Product Sell Price
+                       
+		       Output:
+                                 Product Name
+                                 Product Quantity
+                                 Product Net Price
+                                 Product Sell Price
 				     
 Step 4:  If press 3 then
-                     Input : 
+                     
+		     Input : 
                                 Product Name
                                 Product Quantity
-                  Output: 
+                     Output: 
                                 Product Remaining Quantity
                                 Total Sell Price
 				
 Step 5:   If press 4 then
-	Output:
+	
+	     Output:
 	              Profit
 		      
 
 Step 6:  If press 5 then
-                 Close the program
+                 
+		 Close the program
 		 
                  
 # Explain of Algorithm
 Product list:
-                       Name     -    Quantity          -      Net Price       -    Sell Price
+                       
+		       Name     -    Quantity          -      Net Price       -    Sell Price
                        iPhone   -         1            -        20,500        -       24,999
                        iPhone   -         2            -        20,500x2      -       24,999x2 
 Billing:
-                  Product Name    –       Product Quantity      –     Total Amount
+                  
+		  Product Name    –       Product Quantity      –     Total Amount
                        iPhone             -                     2                      -          49,998
 
 Profit:   
-                   Profit (Sell Price – Net Price) = (49,998 – 41,000) = 8,998 tk.
+                   
+		   Profit (Sell Price – Net Price) = (49,998 – 41,000) = 8,998 tk.
                    thus, Profit = 8,998 tk
 
      Here, 
