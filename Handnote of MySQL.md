@@ -49,7 +49,7 @@ MySQL is a widely used open-source relational database management system (RDBMS)
 
 MySQL is a popular open-source relational database management system (RDBMS). It uses Structured Query Language (SQL) to manage and manipulate databases.
 
-![intro-mysql](\images\04-intro-sql.jpg)
+![intro-mysql](Images/04-intro-sql.jpg)
 
 `Column` | `Row` 
 `Column_Name` = `Key_Attribute` 
@@ -233,7 +233,7 @@ A foreign key is a field (or combination of fields) in one table that uniquely i
 
 `Emp_ID` in an employee table referencing `Account_No` in a salary table.
 
-![a2.jpg](D:\[ Sty-dist ]\[ md@Github ]\images\02-foreign-key-sql.jpg)
+![a2.jpg](Images/02-foreign-key-sql.jpg)
 
 ### Unique Key
 
@@ -260,7 +260,7 @@ A composite key is a primary key composed of two or more fields.
 
 `Emp_ID` and `Dept_Name` together in an employee table.
 
-![a3.jpg](D:\[ Sty-dist ]\[ md@Github ]\images\03-composite-key-sql.jpg)
+![a3.jpg](Images/03-composite-key-sql.jpg)
 
 ### Candidate Key
 
@@ -335,7 +335,7 @@ Dependencies help reduce redundancy, ensure data integrity, and optimize databas
 
 Decomposition is the process of splitting a complex database table into smaller, simpler tables to eliminate redundancy and improve data integrity.
 
-![Untitled.jpg](D:\[ Sty-dist ]\[ md@Github ]\images\05-5NF-sql.jpg)
+![Untitled.jpg](Images/05-5NF-sql.jpg)
 
 Types of Decomposition:
 
