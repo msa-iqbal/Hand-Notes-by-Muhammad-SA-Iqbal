@@ -49,7 +49,7 @@ MySQL is a widely used open-source relational database management system (RDBMS)
 
 MySQL is a popular open-source relational database management system (RDBMS). It uses Structured Query Language (SQL) to manage and manipulate databases.
 
-![intro-mysql](D:\[ Sty-dist ]\[ md@Github ]\images\04-intro-sql.jpg)
+![intro-mysql](\images\04-intro-sql.jpg)
 
 `Column` | `Row` 
 `Column_Name` = `Key_Attribute` 
