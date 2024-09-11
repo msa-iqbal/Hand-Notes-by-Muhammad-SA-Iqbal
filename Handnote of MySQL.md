@@ -216,7 +216,7 @@ A primary key is a field (or combination of fields) that uniquely identifies eac
 
 `EmployeeID` in an employee table.                                                          
 
-![Primary Key](D:\[ Sty-dist ]\[ md@Github ]\images\01-primary-key-sql.jpg)
+![Primary Key](Images/01-primary-key-sql.jpg)
 
 ### Foreign Key
 
