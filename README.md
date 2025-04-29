@@ -13,10 +13,9 @@ C is a general-purpose, procedural, and case-sensitive programming language deve
 1. [Data Types & Format Specifiers](#data-types--format-specifiers)
 1. [Operators](#operators)
 1. [Control Structures](#control-structures)
-1. [Functions](#functions)
-1. [Functions](#functions)
-1. [Strings](#strings)
-1. [Arrays](#arrays)
+1. [Function](#function)
+1. [String](#string)
+1. [Array](#string)
 1. [Pointers](#pointers)
 1. [Structures and Unions](#structures-and-unions)
 1. [Dynamic Memory Allocation](#dynamic-memory-allocation)
@@ -81,8 +80,8 @@ int main() {
 - [Problem-Solving Practices](https://github.com/msa-iqbal/c-plus-plus-code-solutions)
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
@@ -107,8 +106,8 @@ int y = 20;
 ```
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
@@ -135,8 +134,8 @@ Keywords are reserved words in C language that have special, predefined meanings
 |  13 | `float`    |  26 | `union`    |  39 | `unsigned` |  52 | `_Thread_local`  |
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
@@ -184,8 +183,8 @@ int main() {
 - Some (like `\f`, `\a`) may not have visible effects in modern terminals, but they are still standard.
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
@@ -291,8 +290,8 @@ char grade = 'A';
 ```
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
@@ -425,8 +424,8 @@ puts(name);
 ```
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
@@ -528,8 +527,8 @@ int main() {
 - The `%p` specifier is used to print the address of a variable (pointer).
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
@@ -687,8 +686,8 @@ int main() {
 | Pointer             | `*`, `&`                       |
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
@@ -875,12 +874,12 @@ Five
 ```
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
-## Functions
+## Function
 
 A **function** in C is a **block of code** that performs a specific task. It helps in organizing code, avoiding repetition, and improving reusability.
 
@@ -1100,20 +1099,20 @@ Factorial of 5 = 120
 | With Parameters and Return | Yes        | Yes          | `int add(int a, int b)`   |
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
-## Strings
+## String
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
-## Arrays
+## Array
 
 An **array** in C is a **collection of elements** of the same data type stored in **contiguous memory locations**.
 
@@ -1127,7 +1126,11 @@ An **array** in C is a **collection of elements** of the same data type stored i
 data_type array_name[array_size];
 ```
 
-💡 All elements must be of the **same type**.
+**Explanation:**
+
+- **`data_type`**: The data type of the array elements (e.g., `int`, `float`, `char`).
+- **`array_name`**: The name of the array.
+- **`array_size`**: The number of elements the array can hold.
 
 **Example:**
 
@@ -1144,8 +1147,6 @@ int main() {
 }
 ```
 
-💡 Note: For Example highlighting, specify the language immediately after the first set of triple backticks. If no Example highlighting is required, use markdown after the triple backticks (recommended).
-
 **Output:**
 
 ```markdown
@@ -1159,7 +1160,16 @@ Third number: 30
 - **Fixed size:** Size is defined at creation
 - **Same type:** All elements must be of the same data type
 
-**Array Accessing Diagram**
+**Array Declaration, Initialization and Accessing:**
+
+```c
+// Declaration and Initialization
+int numbers[5] = {10, 20, 30, 40, 50};
+
+// Accessing elements
+printf("%d", numbers[0]);  // Output: 10
+printf("%d", numbers[2]);  // Output: 30
+```
 
 ```plaintext
 Index:     0    1    2    3    4
@@ -1769,96 +1779,96 @@ o
 Would you like to cover **pointer and array/string relationships** next?
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
 ## Pointers
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
 ## Structures and Unions
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
 ## Dynamic Memory Allocation
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
 ## File Handling
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
 ## Preprocessor Directives
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
 ## Error Handling
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
 ## Advanced Topics
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
 ## Data Structures in C
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
 ## Common Mistakes and Best Practices
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
 ## Practice Problems and Projects
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
 ## Appendix: Reference Links and Resources
 
 <!-- START "Jump to Top"-->
-<p align="right" style="font-size: 16px; font-weight: 600; margin-top: 24px;">
-  <a href="#table-of-contents" style="text-decoration: none; color: #0366d6;">Jump to Top ▲</a>
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 ````
