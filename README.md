@@ -1,5 +1,5 @@
 <!-- START "Jump to Top"-->
-<p align="right"  font-weight: 600; margin-top: 24px;">
+<p align="right"">
   <a href="#table-of-contents" >Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
