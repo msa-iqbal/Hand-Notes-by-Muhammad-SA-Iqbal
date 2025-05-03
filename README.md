@@ -1366,8 +1366,6 @@ printf("%.2lf \n", result); //result: 2
 
 Calculates the power of a number. Raises a base number to a given exponent.
 
-Syntax: `pow (base, exponent)`
-
 ```c
 double x = pow(4,2);    //formula: 4^2=16
 printf("%.2lf \n", x);  //result: 16
@@ -1375,7 +1373,7 @@ printf("%.2lf \n", x);  //result: 16
 
 **Example (Mathematics): `log()`**
 
-The log() function in C is used to calculate the natural logarithm of a positive number. The natural logarithm is the logarithm to the base e, where e is approximately 2.71828.
+The `log()` function in C is used to calculate the natural logarithm of a positive number. The natural logarithm is the logarithm to the base e, where e is approximately 2.71828.
 
 ```c
 int x=10.5;
@@ -1385,7 +1383,7 @@ printf("%.2lf \n", result); //result: 2.30
 
 **Example (Mathematics): `log10()`**
 
-The log10() function in C is used to calculate the base-10 logarithm of a positive number. This means it finds the power to which 10 must be raised to get the given number.
+The `log10()` function in C is used to calculate the base-10 logarithm of a positive number. This means it finds the power to which 10 must be raised to get the given number.
 
 ```c
 int x=10.5;
@@ -1417,7 +1415,7 @@ printf("%.2lf \n", result); //result: 0.90
 
 **Example (Mathematics): `round()`**
 
-Calculate 'Round or Fraction-less number' from any value from a mathematical equation
+Calculate round or fraction-less number from any value from a mathematical equation
 
 Here, 5.36=5, 5.56=6 and 5.99=6
 
@@ -2605,8 +2603,7 @@ Unlike static memory allocation (fixed size), dynamic memory can **grow or shrin
 
 ### `malloc()` – Memory Allocation
 
-The `malloc()` function in C is used to **dynamically allocate memory** at runtime from the heap.  
-It stands for **Memory Allocation**.
+The `malloc()` function in C is used to **dynamically allocate memory** at runtime from the heap. It stands for **Memory Allocation**.
 
 - It returns a `void *` (pointer to void), which should be **typecast** to the appropriate type.
 - The allocated memory contains **garbage values** (uninitialized).
