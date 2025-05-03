@@ -1,0 +1,60 @@
+{
+  "markdownlint.config": {
+    "MD013": false, // Line length: disables warnings for lines that exceed the character limit
+    "MD033": false, // Inline HTML: allows raw HTML in markdown files
+    "MD036": false, // Emphasis used instead of a heading: disables warnings when using bold for titles
+    "MD025": false, // Multiple top-level headings: allows more than one H1 heading
+    "MD040": false, // Fenced code blocks should have a language specified: allows ``` without language (like ```js)
+    "MD024": false // Allow duplicate headings in different sections (e.g., changelogs)
+  },
+  "cSpell.words": [
+    "Alignas",
+    "Alignof",
+    "calloc",
+    "clrscr",
+    "conio",
+    "ctype",
+    "Discreate",
+    "elif",
+    "errno",
+    "fclose",
+    "feof",
+    "fgets",
+    "fopen",
+    "fprintf",
+    "fscanf",
+    "Funtions",
+    "getch",
+    "getchar",
+    "Helloo",
+    "ifdef",
+    "ifndef",
+    "isalpha",
+    "islower",
+    "isupper",
+    "malloc",
+    "microcontroller",
+    "perror",
+    "preconfigured",
+    "ptrs",
+    "putchar",
+    "randon",
+    "retrun",
+    "Ritchie",
+    "scanf",
+    "Scofield",
+    "srand",
+    "stdlib",
+    "strcat",
+    "strcpy",
+    "strctp",
+    "strerror",
+    "strlwr",
+    "strrev",
+    "strupr",
+    "tolower",
+    "toupper",
+    "trunc",
+    "Undefines"
+  ]
+}

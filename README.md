@@ -15,13 +15,25 @@ C is a general-purpose, procedural, and case-sensitive programming language deve
 1. [Control Structures](#control-structures)
 1. [Function](#function)
 1. [String](#string)
-1. [Array](#string)
+1. [Array](#array)
 1. [Pointers](#pointers)
-1. [Structures and Unions](#structures-and-unions)
+1. [Structure, Union and Enum](#structure-union-and-enum)
 1. [Dynamic Memory Allocation](#dynamic-memory-allocation)
+1. [Typedef and Type Casting](#typedef-and-type-casting)
 1. [File Handling](#file-handling)
 1. [Preprocessor Directives](#preprocessor-directives)
 1. [Error Handling](#error-handling)
+1. [Practice Problems and Solutions](#practice-problems-and-solutions)
+
+### <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2699_fe0f/512.gif" alt="⚙" width="15" height="15"> C/C++ Development Setup
+
+**Recommended Tools**
+
+- **Editor**: [Visual Studio Code](https://code.visualstudio.com/) with the official [C/C++ Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+- **IDE**: [Code::Blocks](http://www.codeblocks.org/) — preconfigured and suitable for beginners
+- **Online Compiler**: [CodeChef IDE](https://www.codechef.com/ide) — for quick practice and testing
+
+---
 
 ## Introduction
 
@@ -59,25 +71,6 @@ int main() {
     return 0;
 }
 ```
-
-### Essential Toolkit for C Learning
-
-#### Method 1: Text Editor or IDE
-
-- **VS Code (Editor):** Lightweight, with C extensions (`C/C++` by Microsoft)
-- **Code::Blocks (IDE):** Beginner-friendly, pre-configured
-
-#### Method 2: C Compiler
-
-- **GCC (GNU Compiler Collection):** Most popular, open-source
-
-#### Method 3: Online Compilers (for quick practice)
-
-- [Code Chef](https://www.codechef.com/ide)
-
-#### Learning Resources
-
-- [Problem-Solving Practices](https://github.com/msa-iqbal/c-plus-plus-code-solutions)
 
 <!-- START "Jump to Top"-->
 <p align="right">
@@ -143,7 +136,7 @@ Keywords are reserved words in C language that have special, predefined meanings
 
 Escape sequences (also known as **backslash character constants**) are special character combinations that begin with a backslash (`\`). They are used to represent characters that cannot be typed directly or have special meaning in strings or characters.
 
-**List of Common Escape Sequences in C:**
+**List of Common Escape Sequences:**
 
 | Escape Sequence | Meaning                           | Example in Code              | Output          |
 | --------------- | --------------------------------- | ---------------------------- | --------------- |
@@ -176,11 +169,11 @@ int main() {
 }
 ```
 
-**💡 Notes:**
-
-- Escape sequences are used in both **character** (`'\n'`) and **string** (`"\n"`) literals.
-- They are vital for **text formatting**, **controlling output**, and representing special characters.
-- Some (like `\f`, `\a`) may not have visible effects in modern terminals, but they are still standard.
+> [!NOTE]
+>
+> - Escape sequences are used in both **character** (`'\n'`) and **string** (`"\n"`) literals.
+> - They are vital for **text formatting**, **controlling output**, and representing special characters.
+> - Some (like `\f`, `\a`) may not have visible effects in modern terminals, but they are still standard.
 
 <!-- START "Jump to Top"-->
 <p align="right">
@@ -267,20 +260,6 @@ Static: 1
 Static: 2
 ```
 
-### Constants vs Variables
-
-| Feature      | Variable                    | Constant                     |
-| ------------ | --------------------------- | ---------------------------- |
-| Value change | Can change during execution | Cannot change after assigned |
-| Declaration  | `int age = 20;`             | `const int age = 20;`        |
-
-**💡 Notes:**
-
-- Variable values are stored in **RAM**.
-- Use `const` for **read-only** values.
-- Initialize variables to **avoid garbage values**.
-- Use meaningful names for better **code readability**.
-
 **Example - ✅ Good Practice:**
 
 ```c
@@ -288,6 +267,20 @@ int studentAge = 20;
 float temperature = 36.6;
 char grade = 'A';
 ```
+
+### Constants vs Variables
+
+| Feature      | Variable                    | Constant                     |
+| ------------ | --------------------------- | ---------------------------- |
+| Value change | Can change during execution | Cannot change after assigned |
+| Declaration  | `int age = 20;`             | `const int age = 20;`        |
+
+> [!TIP]
+>
+> - Variable values are stored in **RAM**.
+> - Use `const` for **read-only** values.
+> - Initialize variables to **avoid garbage values**.
+> - Use meaningful names for better **code readability**.
 
 <!-- START "Jump to Top"-->
 <p align="right">
@@ -395,12 +388,6 @@ int main() {
 }
 ```
 
-**💡 Notes:**
-
-- `scanf("%s", str)` reads only a **single word** (no spaces). Use `fgets()` for full-line input.
-- `printf()` does not require the address-of operator.
-- Be careful with buffer issues when mixing `scanf()` with `gets()` or `fgets()`.
-
 ### Other I/O Functions
 
 | Function    | Purpose                           |
@@ -423,6 +410,12 @@ puts("Hello,");
 puts(name);
 ```
 
+> [!NOTE]
+>
+> - `scanf("%s", str)` reads only a **single word** (no spaces). Use `fgets()` for full-line input.
+> - `printf()` does not require the address-of operator.
+> - Be careful with buffer issues when mixing `scanf()` with `gets()` or `fgets()`.
+
 <!-- START "Jump to Top"-->
 <p align="right">
   <a href="#table-of-contents">Jump to Top ▲</a>
@@ -433,7 +426,7 @@ puts(name);
 
 **Data types** specify the type of data a variable can hold. Different **format specifiers** are used in **printf** and **scanf** to handle the input and output of these data types.
 
-#### **Basic Data Types:**
+**Basic Data Types:**
 
 - **`char`**: Stores a single character.
   - Size: 1 byte
@@ -455,7 +448,7 @@ puts(name);
 
 - **`void`**: Represents an absence of data. It is used in functions that do not return a value.
 
-#### **Derived Data Types:**
+**Derived Data Types:**
 
 - **`array`**: Collection of elements of the same type.
 - **`pointer`**: A variable that stores the memory address of another variable.
@@ -519,12 +512,12 @@ int main() {
 }
 ```
 
-**💡 Notes:**
-
-- `%d` and `%i` can be used interchangeably for integers in **printf** and **scanf**.
-- `%lf` is used for **double** in **printf** but can be used as `%f` in **scanf**.
-- The `long` and `short` modifiers help control the size and range of data types in C.
-- The `%p` specifier is used to print the address of a variable (pointer).
+> [!NOTE]
+>
+> - `%d` and `%i` can be used interchangeably for integers in **printf** and **scanf**.
+> - `%lf` is used for **double** in **printf** but can be used as `%f` in **scanf**.
+> - The `long` and `short` modifiers help control the size and range of data types in C.
+> - The `%p` specifier is used to print the address of a variable (pointer).
 
 <!-- START "Jump to Top"-->
 <p align="right">
@@ -608,6 +601,46 @@ Operate on binary digits.
 | `<<`     | Left shift  | `a << 1` |
 | `>>`     | Right shift | `a >> 1` |
 
+**Condition**:
+
+- Work with bit/byte
+- Work into only integer number
+
+**Operation Steps:**
+
+```plaintext
+1. First, convert the decimal or integer number to a binary number.
+   Example:
+         let, int x=32, y=12;      128 | 64 | 32 | 16 | 8 | 4 | 2 | 1  (from: 2^n)
+                                   -----------------------------------
+          Convert to Binary, x=32=  0    0     1    0   0   0   0   0
+          Convert to Binary, y=12=  0    0     0    0   1   1   0   0
+
+2. Operation:
+             Bitwise AND: &
+             Condition: If Both input are '1' then out: 1. Otherwise; out: 0
+             Binary,  x=32= 0 0 1 0 0 0 0 0
+             Binary,  y=12= 0 0 0 0 1 1 0 0
+             --------------------------------
+             Multiply[x*y]= 0 0 0 0 0 0 0 0  (= result: 0)
+
+
+             Bitwise OR: |
+             Condition: If Both/Any input are '1' then out: 1. Otherwise; out: 0
+             Binary,  x=32= 0 0 1 0 0 0 0 0
+             Binary,  y=12= 0 0 0 0 1 1 0 0
+             ---------------------------------
+             Addition[x+y]= 0 0 1 0 1 1 0 0  (= result: 44)
+
+
+             Bitwise EX-OR: ^
+             Condition: If Both input are same then out: 0. Otherwise; out: 1
+             Binary,  x=32= 0 0 1 0 0 0 0 0
+             Binary,  y=12= 0 0 0 0 1 1 0 0
+             ---------------------------------
+             Ex-OR [x^y]  = 0 0 1 0 1 1 0 0  (= result: 44)
+```
+
 ### **Conditional (Ternary) Operator**
 
 A shorthand for `if-else`.
@@ -619,8 +652,8 @@ condition ? expression_if_true : expression_if_false;
 **Example:**
 
 ```c
-int a = 10, b = 20;
-int max = (a > b) ? a : b;
+ int a = 10, b = 20;
+ int max = (a > b) ? a : b;  // Output: 20
 ```
 
 ### **Sizeof Operator**
@@ -670,21 +703,6 @@ int main() {
 }
 ```
 
-### 🕮 Summary Table
-
-| Category            | Examples                       |
-| ------------------- | ------------------------------ |
-| Arithmetic          | `+`, `-`, `*`, `/`, `%`        |
-| Relational          | `==`, `!=`, `>`, `<`, `>=`     |
-| Logical             | `&&`, `┃┃`, `!`                |
-| Assignment          | `=`, `+=`, `-=`, `*=`          |
-| Increment/Decrement | `++`, `--`                     |
-| Bitwise             | `&`, `┃`, `^`, `~`, `<<`, `>>` |
-| Ternary             | `condition ? true : false`     |
-| Sizeof              | `sizeof(var)`                  |
-| Comma               | `(a = 5, b = 6)`               |
-| Pointer             | `*`, `&`                       |
-
 <!-- START "Jump to Top"-->
 <p align="right">
   <a href="#table-of-contents">Jump to Top ▲</a>
@@ -713,6 +731,24 @@ if (condition) {
 }
 ```
 
+Example:
+
+```c
+ #include <stdio.h>
+
+  int main() {
+      int number = 10;
+
+      if (number > 0) {
+          printf("The number is positive.\n");
+      }
+
+      return 0;
+  }
+
+// OUTPUT: The number is positive.
+```
+
 **`if-else` Statement**
 
 ```c
@@ -721,6 +757,26 @@ if (condition) {
 } else {
     // if false
 }
+```
+
+Example:
+
+```c
+  #include <stdio.h>
+  int main() {
+
+      int number = 10;
+
+      if (number > 0) {
+          printf("The number is positive.\n");
+      } else {
+          printf("The number is not positive.\n");
+      }
+
+      return 0;
+  }
+
+// OUTPUT: The number is positive.
 ```
 
 **`else-if` Ladder**
@@ -735,6 +791,28 @@ if (condition1) {
 }
 ```
 
+Example:
+
+```c
+  #include <stdio.h>
+
+  int main() {
+      int number = 0;
+
+      if (number > 0) {
+          printf("The number is positive.\n");
+      } else if (number < 0) {
+          printf("The number is negative.\n");
+      } else {
+          printf("The number is zero.\n");
+      }
+
+      return 0;
+  }
+
+// OUTPUT: The number is Zero.
+```
+
 **Nested `if`**
 
 ```c
@@ -743,6 +821,26 @@ if (condition1) {
         // block
     }
 }
+```
+
+Example:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number = 25;
+
+    if (number > 0) {
+        if (number < 100) {
+            printf("Number is positive and less than 100.\n");
+        }
+    }
+
+    return 0;
+}
+
+// OUTPUT: Number is positive and less than 100.
 ```
 
 **Switch-case**
@@ -758,8 +856,49 @@ switch (expression) {
         // code
         break;
     default:
-        // default code
+        // default code (Optional)
 }
+```
+
+Example:
+
+```c
+  #include <stdio.h>
+
+  int main() {
+      int day = 3;
+
+      switch (day) {
+          case 1:
+              printf("Saturday\n");
+              break;
+          case 2:
+              printf("Sunday\n");
+              break;
+          case 3:
+              printf("Monday\n");  //this block is activated
+              break;
+          case 4:
+              printf("Tuesday\n");
+              break;
+          case 5:
+              printf("Wednesday\n");
+              break;
+          case 6:
+              printf("Thursday\n");
+              break;
+          case 7:
+              printf("Friday\n");
+              break;
+          default:
+              printf("Invalid day\n");
+              break;
+      }
+
+      return 0;
+  }
+
+// OUTPUT: Monday
 ```
 
 ### **Looping Statements**
@@ -774,12 +913,49 @@ for (initialization; condition; increment) {
 }
 ```
 
+Example:
+
+```c
+#include <stdio.h>
+
+int main() {
+    // Print numbers from 1 to 5
+    for (int i = 1; i <= 5; i++) {
+        printf("%d ", i);
+    }
+
+    return 0;
+}
+
+// OUTPUT: 1 2 3 4 5
+```
+
 **`while` Loop**
 
 ```c
 while (condition) {
     // code block
 }
+```
+
+Example:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+
+    // Print numbers from 1 to 5
+    while (i <= 5) {
+        printf("%d ", i);
+        i++; // increment i
+    }
+
+    return 0;
+}
+
+// OUTPUT: 1 2 3 4 5
 ```
 
 **`do-while` Loop**
@@ -791,6 +967,34 @@ do {
 ```
 
 💡 Executes at least once even if condition is false.
+
+Example:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+
+    // Print numbers from 1 to 5 using do-while loop
+    do {
+        printf("%d ", i);
+        i++; // increment i
+    } while (i <= 5);
+
+    return 0;
+}
+
+// OUTPUT: 1 2 3 4 5
+```
+
+**Different between `while` vs `do...while`**
+
+| **Feature**        | `while` **Loop**                                            | `do-while` **Loop**                                                          |
+| ------------------ | ----------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Condition check    | Before loop body                                            | After loop body                                                              |
+| Minimum executions | 0                                                           | 1                                                                            |
+| Use cases          | When you're unsure if the loop should execute at least once | When you want the loop to execute at least once, regardless of the condition |
 
 ### **Jump Statements**
 
@@ -806,71 +1010,31 @@ Used to **control the flow** of loops and functions.
 **Example (break):**
 
 ```c
-for (int i = 1; i <= 10; i++) {
-    if (i == 5)
-        break;
-    printf("%d ", i);
+#include <stdio.h>
+
+int main() {
+
+    for (int i = 1; i <= 10; i++) {
+        if (i == 5)
+            break;
+        printf("%d ", i);     // Output: 1 2 3 4
+    }
 }
 ```
 
 **Example (continue):**
 
 ```c
-for (int i = 1; i <= 5; i++) {
-    if (i == 3)
-        continue;
-    printf("%d ", i);
-}
-```
-
-### 🕮 Summary Table
-
-| Structure   | Type      | Keywords Used                                        |
-| ----------- | --------- | ---------------------------------------------------- |
-| Conditional | Decision  | `if`, `else`, `else if`, `switch`, `case`, `default` |
-| Looping     | Iteration | `for`, `while`, `do-while`                           |
-| Jump        | Branching | `break`, `continue`, `goto`, `return`                |
-
-**Example:**
-
-```c
 #include <stdio.h>
 
 int main() {
-    int num = 5;
 
-    // Conditional
-    if (num > 0)
-        printf("Positive\n");
-
-    // Looping
-    for (int i = 1; i <= num; i++) {
+    for (int i = 1; i <= 5; i++) {
         if (i == 3)
             continue;
-        if (i == 5)
-            break;
-        printf("%d\n", i);
+        printf("%d ", i);   // Output: 1 2 4 5
     }
-
-    // switch-case
-    switch (num) {
-        case 1: printf("One\n"); break;
-        case 5: printf("Five\n"); break;
-        default: printf("Other\n");
-    }
-
-    return 0;
 }
-```
-
-**Output:**
-
-```markdown
-Positive
-1
-2
-4
-Five
 ```
 
 <!-- START "Jump to Top"-->
@@ -887,21 +1051,30 @@ A **function** in C is a **block of code** that performs a specific task. It hel
 >
 > > A function in C is like a coffee machine — you press a button (input), it brews coffee (process), and gives you a cup (output).
 
-### **Types of Functions**
+**Types of Functions**
 
-1. **Built-in (Library) Functions:** Provided by C libraries.  
-   Examples: `printf()`, `scanf()`, `strlen()`, `sqrt()`
-2. **User-defined Funtions:** Created by the programmer.
+1. **User-defined Funtions:** Created by the programmer.
 
-### **Function Syntax & Components:**
+2. **Built-in (Library) Functions:** Provided by C libraries.
 
-**Function Syntax:**
+### **User-defined Funtions:**
+
+**Syntax (Declaration + Definition + Call):**
 
 ```c
-return_type function_name(parameter_list) {
-    // function body
-    return value; // optional
+// ❏ Function Declaration
+returnType functionName (dataType1 parameter1, dataType2 parameter2, ...);
+
+ // ❏ Function Definition
+returnType functionName (dataType1 parameter1, dataType2 parameter2, ...) {
+
+    // code... block
+
+    return value; // If the function returns a value
 }
+
+// ❏ Function Call
+functionName (arguments);
 ```
 
 **The Function Components are -**
@@ -975,8 +1148,6 @@ int add(int a, int b) {
 Sum = 30
 ```
 
-### Some more examples
-
 **Example (No return, no parameters):**
 
 ```c
@@ -1043,25 +1214,7 @@ int multiply(int x, int y) {
 Result = 12
 ```
 
-### Return Types in C Functions
-
-| Return Type | Meaning             | Example           |
-| ----------- | ------------------- | ----------------- |
-| `void`      | No return value     | `void show()`     |
-| `int`       | Returns integer     | `int getSum()`    |
-| `float`     | Returns float value | `float avg()`     |
-| `char`      | Returns a character | `char getGrade()` |
-
-### Parameter Types
-
-| Type               | Example                 | Description                      |
-| ------------------ | ----------------------- | -------------------------------- |
-| No Parameters      | `void greet(void)`      | Takes no input                   |
-| With Parameters    | `int sum(int a, int b)` | Takes input values               |
-| Default (Not in C) | ❌                      | C doesn’t support default params |
-| Variable Arguments | `int printf(...)`       | Use `stdarg.h`                   |
-
-### Recursive Function
+**Recursive Function**
 
 A recursive function is a function that calls itself to solve smaller versions of a problem.
 
@@ -1089,7 +1242,25 @@ int main() {
 Factorial of 5 = 120
 ```
 
-### 🕮 Function Categories Summary
+**Return Types in C Functions:**
+
+| Return Type | Meaning             | Example           |
+| ----------- | ------------------- | ----------------- |
+| `void`      | No return value     | `void show()`     |
+| `int`       | Returns integer     | `int getSum()`    |
+| `float`     | Returns float value | `float avg()`     |
+| `char`      | Returns a character | `char getGrade()` |
+
+**Parameter Types:**
+
+| Type               | Example                 | Description                      |
+| ------------------ | ----------------------- | -------------------------------- |
+| No Parameters      | `void greet(void)`      | Takes no input                   |
+| With Parameters    | `int sum(int a, int b)` | Takes input values               |
+| Default (Not in C) | ❌                      | C doesn’t support default params |
+| Variable Arguments | `int printf(...)`       | Use `stdarg.h`                   |
+
+**Function Categories:**
 
 | Function Type              | Parameters | Return Value | Example                   |
 | -------------------------- | ---------- | ------------ | ------------------------- |
@@ -1098,6 +1269,307 @@ Factorial of 5 = 120
 | No Parameters, With Return | No         | Yes          | `int getTime(void)`       |
 | With Parameters and Return | Yes        | Yes          | `int add(int a, int b)`   |
 
+### **Built-in (Library) Functions:**
+
+These are pre-defined functions provided by C's standard library.
+
+Example: `printf()`, `scanf()`, `strlen()`, `malloc()`, etc.
+
+**Header Files:**
+
+You don't need to define these functions, but you must include the appropriate header files.
+
+_Example: `#include <stdio.h>` (for `printf()`)._
+
+Some Header File List:
+
+- `stdio.h` (Standard input-output.header):
+
+  - Inside of Header: `printf()`, `scanf()`, `getchar()`, `putchar()`, `gets()`, `puts()`, `fopen()`, `fclose()`, `feof()`
+
+- `conio.h` (Console input-output.header) - Contains declaration for console I/O
+
+  - Inside of Header: `clrscr()`, `getch()`, `exit()`
+
+- `ctype.h` (Character Type.header) - Used for Character-handling.
+
+  - Inside of Header: `isupper()`, `islower()`, `isalpha()`
+
+- `math.h` (Mathematics.header) - Declares mathematical functions and macros.
+
+  - Inside of Header: `pow()`, `sqrt()`, `sin()`, `cos()`, `tan()`, `log()`
+
+- `stdlib.h` (Standard Library.header) - For number conversion, storage allocation
+
+  - Inside of Header: `rand()`, `srand()`
+
+- `string.h` (String.header) - Used for manipulate strings.
+
+  - Inside of Header: `strlen()`, `strctp()`, `strcmp()`, `strcat()`, `strlwr()`, `strupr()`,`strrev()`
+
+**Example: `sizeof()`**
+
+Determines the size of a variable, data type, or expression in bytes. It’s useful for understanding memory usage and performing size-based operations.
+
+```c
+char a; int b; float c; double d;
+
+printf("Size of Character is: %d \n", sizeof(a));
+printf("Size of Integer is: %d \n", sizeof(b));
+printf("Size of Float is: %d \n", sizeof(c));
+printf("Size of Double is: %d  \n", sizeof(d));
+```
+
+**Example (Character): `toupper();` `tolower();`**
+
+Convert a lowercase letter to uppercase or vice versa.
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    char lower, upper;
+
+    printf("Enter any lowercase letter: ");
+    scanf("%c", &lower);
+
+    upper = toupper(lower);
+    printf("The uppercase letter is: %c \n", upper);
+    return 0;
+}
+
+// Similarly Replace: tolower();
+```
+
+**Example (Mathematics): `abs()`**
+
+Calculates the absolute value of a numerical expression. Returns the positive equivalent of a negative number, or the original value if the number is already positive.
+
+```c
+int x= -12;
+x = abs(-12);
+printf("%d \n", x);  //result: 12
+```
+
+**Example (Mathematics): `sqrt()`**
+
+Calculates the square root of a non-negative floating-point number. Returns the positive square root of the given number.
+
+```c
+int x=4;
+double result = sqrt(x);
+printf("%.2lf \n", result); //result: 2
+```
+
+**Example (Mathematics): `pow()`**
+
+Calculates the power of a number. Raises a base number to a given exponent.
+
+Syntax: `pow (base, exponent)`
+
+```c
+double x = pow(4,2);    //formula: 4^2=16
+printf("%.2lf \n", x);  //result: 16
+```
+
+**Example (Mathematics): `log()`**
+
+The log() function in C is used to calculate the natural logarithm of a positive number. The natural logarithm is the logarithm to the base e, where e is approximately 2.71828.
+
+```c
+int x=10.5;
+double result = log(x);
+printf("%.2lf \n", result); //result: 2.30
+```
+
+**Example (Mathematics): `log10()`**
+
+The log10() function in C is used to calculate the base-10 logarithm of a positive number. This means it finds the power to which 10 must be raised to get the given number.
+
+```c
+int x=10.5;
+double result = log10(x);
+printf("%.2lf \n", result); //result: 1.00
+```
+
+**Example (Mathematics): `exp()`**
+
+Calculates the exponential function of a number. Finds the value of e raised to the power of the given number, where e is approximately 2.71828.
+
+```c
+int x=5;
+double result = exp(x);
+printf("%.2lf \n", result); //result: 148.41
+```
+
+**Example (Mathematics): `sin()`, `cos()`, `sec()`, `cosec()`, `tan()`, `cot()`**
+
+Calculates the trigonometric (functions sine/cosine/tangent/secant/cosecant/cotangent) of an angle expressed in radians.
+
+```c
+int x=46;
+double result = sin(x);
+printf("%.2lf \n", result); //result: 0.90
+
+// Similarly Replace: sin() | sec(); | cosec(); | tan(); | cot();
+```
+
+**Example (Mathematics): `round()`**
+
+Calculate 'Round or Fraction-less number' from any value from a mathematical equation
+
+Here, 5.36=5, 5.56=6 and 5.99=6
+
+```c
+int x=4.6;
+double result = sin(x);
+printf("%.2lf \n", result); //result: 4.00
+
+```
+
+**Example (Mathematics): `ceil()`**
+
+```plaintext
+--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--
+
+ -7 -6 -5 -4 -3 -2 -1  0  1  2  3  4  5  6  7
+```
+
+For non-integers, `Ceiling - Floor = 1`
+
+Ceiling rounds up:
+⌈5.36⌉ = 6, ⌈5.12⌉ = 6, ⌈5.99⌉ = 6
+
+```c
+int x=4.6;
+double result = ceil(x);
+printf("%.2lf \n", result); //result: 5.00
+```
+
+**Example (Mathematics): `floor()`**
+
+```plaintext
+--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--
+
+ -7 -6 -5 -4 -3 -2 -1  0  1  2  3  4  5  6  7
+```
+
+For non-integers, `Ceiling - Floor = 1`
+
+Floor rounds down:
+⌊5.36⌋ = 5, ⌊5.56⌋ = 5, ⌊5.99⌋ = 5
+
+```c
+int x=4.6;
+double result = floor0(x);
+printf("%.2lf \n", result); //result: 4.00
+```
+
+**Example (Mathematics): `trunc()`**;
+
+Convert `Integer` from `float` or fraction number.
+
+```C
+int x=6.6;
+double result = sin(x);
+printf("%.2lf \n", result); //result: 6.00
+```
+
+**Example (Mathematics): `rand()`**
+
+Create Random numbers.
+
+```C
+#include <stdio.h>
+#include <stdlib.h>  //Using header file for random numbers
+
+int main()
+{
+    for (int i=1; i<=5; i++){
+        int randonNum = rand(); //Random numbers create
+        printf(" Random Number: %d \n", randonNum);
+    }
+    return 0;
+}
+```
+
+**Example (String): `strlen()`**
+
+Calculate the String length.
+
+```c
+char name [] = "Nazrull";
+int len = strlen(name);
+printf("Length: %d", len);
+```
+
+**Example (String): `strcpy()`**
+
+Copy string Using function.
+
+```c
+char source [] = "Michael Scofield";
+char destination [100];
+strcpy(destination, source);
+printf("Check 'strcpy()' for 'destination': %s \n", destination);
+```
+
+**Example (String): `strcat()`**
+
+String Concatenation by using function. (Adding Every Characters)
+
+```c
+char name1 [] = "Michael ";
+char name2 [] = "Scofield";
+strcat(name1, name2);
+printf("Print the Concatenation: %s \n", name1);
+```
+
+**Example (String): `strcmp()`**
+
+Compare different different String for check they equal or not.
+
+```c
+char name1 [50] = "Michael ";
+char name2 [] = "Scofield";
+int result = strcmp(name1, name2); //If both string are same then return '0'
+if(result == 0)
+    printf("String are equal");
+else
+    printf("String aren't equal");
+```
+
+**Example (String): `strrev()`**
+
+Reverse String from given string.
+
+```c
+char name [] = "Michael Scofield";
+strrev(name); //Only Support One parameter
+printf("The reverse string is: %s", name);
+```
+
+**Example (String): `strupr()`**
+
+For UpperCase Letter from given string.
+
+```c
+char name [] = "Michael Scofield";
+strupr(name); //Only Support One parameter
+printf("The UpperCase string is: %s", name);
+```
+
+**Example (String): `strlwr()`**
+
+For Lowercase Letter from given string.
+
+```c
+char name [] = "Michael Scofield";
+strlwr(name); //Only Support One parameter
+printf("The Lowercase string is: %s", name);
+```
+
 <!-- START "Jump to Top"-->
 <p align="right">
   <a href="#table-of-contents">Jump to Top ▲</a>
@@ -1105,6 +1577,121 @@ Factorial of 5 = 120
 <!-- END "Jump to Top" -->
 
 ## String
+
+In C, a string is a sequence of characters terminated by a null character (`'\0'`).
+Unlike some high-level languages, **C does not have a built-in `string` data type.**
+Strings are implemented as arrays of characters.
+
+**Declaration of String**
+
+```c
+char str[10]; // Can store up to 9 characters + 1 null character '\0'
+```
+
+### Ways to Initialize a String
+
+**Using String Literal**
+
+```c
+char str[] = "Hello";
+```
+
+Automatically appends `\0` at the end.
+
+**Using Character Array**
+
+```c
+char str[] = {'H', 'e', 'l', 'l', 'o', '\0'};
+```
+
+**Example: Basic String Input and Output**
+
+```c
+#include <stdio.h>
+
+int main() {
+    char name[20];
+
+    printf("Enter your name: ");
+    scanf("%s", name);  // Reads a single word (no spaces)
+
+    printf("Hello, %s!\n", name);
+
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Enter your name: Alice
+Hello, Alice!
+```
+
+**Example: Using `gets()` and `puts()` for Full Line Input**
+
+```c
+#include <stdio.h>
+
+int main() {
+    char fullName[50];
+
+    printf("Enter your full name: ");
+    gets(fullName);  // Reads full line including spaces (unsafe)
+
+    puts("Your name is:");
+    puts(fullName);
+
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Enter your full name: Alice Johnson
+Your name is:
+Alice Johnson
+
+```
+
+> [!WARNING]
+>
+> `gets()` is unsafe and deprecated in modern C. Use `fgets()` instead.
+
+**Example: Using `fgets()` Safely**
+
+```c
+#include <stdio.h>
+
+int main() {
+    char fullName[50];
+
+    printf("Enter your full name: ");
+    fgets(fullName, sizeof(fullName), stdin);  // Safe input with spaces
+
+    printf("Hello, %s", fullName);
+
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Enter your full name: Alice Johnson
+Hello, Alice Johnson
+```
+
+### String Functions (`<string.h>`)
+
+| Function        | Description                      | Example                 |
+| --------------- | -------------------------------- | ----------------------- |
+| `strlen(s)`     | Returns length                   | `strlen("Hi") → 2`      |
+| `strcpy(d, s)`  | Copies string `s` into `d`       | `strcpy(dest, src)`     |
+| `strcat(d, s)`  | Concatenates `s` to `d`          | `strcat(dest, src)`     |
+| `strcmp(s1,s2)` | Compares two strings             | Returns 0 if equal      |
+| `strrev(s)`     | Reverses a string (non-standard) | `strrev("abc") → "cba"` |
 
 <!-- START "Jump to Top"-->
 <p align="right">
@@ -1154,11 +1741,11 @@ First number: 10
 Third number: 30
 ```
 
-**💡 Notes:**
-
-- **Index starts at `0`:** First element is `array[0]`
-- **Fixed size:** Size is defined at creation
-- **Same type:** All elements must be of the same data type
+> [!NOTE]
+>
+> - **Index starts at `0`:** The first element is accessed as `array[0]`
+> - **Fixed size:** The size of the array must be defined at the time of declaration
+> - **Same type:** All elements must be of the same type (e.g., all `int`, `float`, etc.)
 
 **Array Declaration, Initialization and Accessing:**
 
@@ -1170,6 +1757,8 @@ int numbers[5] = {10, 20, 30, 40, 50};
 printf("%d", numbers[0]);  // Output: 10
 printf("%d", numbers[2]);  // Output: 30
 ```
+
+**Array Accessing Diagram:**
 
 ```plaintext
 Index:     0    1    2    3    4
@@ -1302,7 +1891,7 @@ Rows ↓
   2     9  10  11  12
 ```
 
-### 3D Array
+### Multi-dimensional or 3D Array
 
 A three-dimensional array can be visualized as an array of 2D arrays. It's like having multiple matrices stacked together.
 
@@ -1335,13 +1924,11 @@ datatype variable_name = array_name [size1] [size2] [size3];
 - **`size2`**: The size of the second dimension (number of rows in each 2D array).
 - **`size3`**: The size of the third dimension (number of columns in each 2D array).
 
-**💡 Notes:**
-
-- **Fixed Size:** The size of each dimension must be specified at compile time (except for the first dimension, which can sometimes be omitted in the declaration if the array is initialized).
-
-- **Memory Layout:** Multi-dimensional arrays are stored in a contiguous block of memory. For a 2D array, the elements are stored row by row.
-
-- **Access:** Elements are accessed using multiple indices, one for each dimension.
+> [!NOTE]
+>
+> - **Fixed Size:** The size of each dimension must be specified at compile time (except for the first dimension, which can sometimes be omitted in the declaration if the array is initialized).
+> - **Memory Layout:** Multi-dimensional arrays are stored in a contiguous block of memory. For a 2D array, the elements are stored row by row.
+> - **Access:** Elements are accessed using multiple indices, one for each dimension.
 
 **Example:**
 
@@ -1469,20 +2056,49 @@ int main() {
 Sum = 15
 ```
 
-## 🔹 Passing Arrays to Functions
+### Passing Arrays to Functions
+
+In C, when you pass an **array to a function**, **you’re passing the address of the first element** — not the entire array.
+
+This means that **any changes made to the array inside the function affect the original array**.
+
+**Syntax**
 
 ```c
-void printArray(int arr[], int size) {
-    for (int i = 0; i < size; i++) {
+// Function declaration
+void displayArray(int arr[], int size);
+
+// Function call
+displayArray(arr, size);
+```
+
+**Example:**
+
+```c
+#include <stdio.h>
+
+void displayArray(int arr[], int size) {
+    for(int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
     }
+    printf("\n");
+}
+
+int main() {
+    int nums[] = {10, 20, 30, 40, 50};
+    int length = sizeof(nums) / sizeof(nums[0]);
+
+    printf("Array elements: ");
+    displayArray(nums, length);
+
+    return 0;
 }
 ```
 
-Call it with:
+**Output:**
 
 ```c
-printArray(numbers, 5);
+Array elements: 10 20 30 40 50
 ```
 
 ### **Array of Pointers**
@@ -1523,7 +2139,7 @@ Element 4: 40
 Element 5: 50
 ```
 
-**Multi-Dimensional Arrays of Pointers**
+**Multi-Dimensional Arrays of Pointers**  
 These arrays are arrays of pointers that can be used to manage more complex data structures, such as arrays of arrays where each sub-array can be of different sizes.
 
 **Example:**
@@ -1570,214 +2186,6 @@ Element [2][2]: 11
 Element [2][3]: 12
 ```
 
-<!-- dgdfgfdgfdgfdg -->
-
-# 📦 Arrays and Strings in C
-
-In C, **arrays** are collections of data of the same type stored in contiguous memory. **Strings** are special character arrays that end with a null character `'\0'`.
-
----
-
-## 🔹 Arrays in C
-
-### 🔸 Syntax
-
-```c
-data_type array_name[size];
-```
-
----
-
-### 🔸 Types of Arrays
-
-| Type          | Description                   | Example              |
-| ------------- | ----------------------------- | -------------------- |
-| 1D Array      | Linear collection             | `int nums[5];`       |
-| 2D Array      | Table-like (matrix)           | `int matrix[3][3];`  |
-| Multi-D Array | More than 2 dimensions (rare) | `int data[2][3][4];` |
-
----
-
-### 🔸 Example: 1D Array
-
-```c
-#include <stdio.h>
-
-int main() {
-    int arr[5] = {1, 2, 3, 4, 5};
-    for (int i = 0; i < 5; i++) {
-        printf("%d ", arr[i]);
-    }
-    return 0;
-}
-```
-
-**🔸 Output:**
-
-```
-1 2 3 4 5
-```
-
----
-
-### 🔸 Example: 2D Array
-
-```c
-#include <stdio.h>
-
-int main() {
-    int mat[2][2] = {{1, 2}, {3, 4}};
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 2; j++) {
-            printf("%d ", mat[i][j]);
-        }
-        printf("\n");
-    }
-    return 0;
-}
-```
-
-**🔸 Output:**
-
-```
-1 2
-3 4
-```
-
----
-
-## 🔹 Strings in C
-
-Strings are arrays of characters ending with the null character `'\0'`.
-
-### 🔸 Declaration
-
-```c
-char str[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
-char str[] = "Hello";  // automatically null-terminated
-```
-
----
-
-### 🔸 Example: Basic String Input and Output
-
-```c
-#include <stdio.h>
-
-int main() {
-    char name[20];
-    printf("Enter your name: ");
-    scanf("%s", name);  // input without spaces
-    printf("Hello, %s!\n", name);
-    return 0;
-}
-```
-
-**🔸 Output (if input is `John`):**
-
-```
-Enter your name: John
-Hello, John!
-```
-
----
-
-### 🔸 Example: Using `gets()` and `puts()` (⚠️ not recommended due to buffer overflow)
-
-```c
-#include <stdio.h>
-
-int main() {
-    char str[50];
-    gets(str);         // unsafe, use fgets instead
-    puts(str);
-    return 0;
-}
-```
-
----
-
-### 🔸 Recommended: Using `fgets()`
-
-```c
-#include <stdio.h>
-
-int main() {
-    char str[50];
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-    printf("You entered: %s", str);
-    return 0;
-}
-```
-
----
-
-## 🔹 String Functions (`<string.h>`)
-
-| Function        | Description                      | Example                 |
-| --------------- | -------------------------------- | ----------------------- |
-| `strlen(s)`     | Returns length                   | `strlen("Hi") → 2`      |
-| `strcpy(d, s)`  | Copies string `s` into `d`       | `strcpy(dest, src)`     |
-| `strcat(d, s)`  | Concatenates `s` to `d`          | `strcat(dest, src)`     |
-| `strcmp(s1,s2)` | Compares two strings             | Returns 0 if equal      |
-| `strrev(s)`     | Reverses a string (non-standard) | `strrev("abc") → "cba"` |
-
----
-
-## 🔸 Example: String Length
-
-```c
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str[] = "Hello";
-    printf("Length = %lu\n", strlen(str));
-    return 0;
-}
-```
-
-**🔸 Output:**
-
-```
-Length = 5
-```
-
----
-
-## 🔹 Difference Between Arrays and Strings
-
-| Feature       | Arrays        | Strings                        |
-| ------------- | ------------- | ------------------------------ |
-| Type          | Any data type | Only `char` type               |
-| Termination   | No terminator | Ends with `'\0'`               |
-| Header Needed | None          | Use `<string.h>` for functions |
-
----
-
-## 🧪 Example: Character Access in String
-
-```c
-#include <stdio.h>
-
-int main() {
-    char str[] = "World";
-    printf("%c\n", str[1]);  // prints 2nd character
-    return 0;
-}
-```
-
-**🔸 Output:**
-
-```
-o
-```
-
----
-
-Would you like to cover **pointer and array/string relationships** next?
-
 <!-- START "Jump to Top"-->
 <p align="right">
   <a href="#table-of-contents">Jump to Top ▲</a>
@@ -1786,13 +2194,394 @@ Would you like to cover **pointer and array/string relationships** next?
 
 ## Pointers
 
-<!-- START "Jump to Top"-->
-<p align="right">
-  <a href="#table-of-contents">Jump to Top ▲</a>
-</p>
-<!-- END "Jump to Top" -->
+A **pointer** is a **variable that stores the address of another variable**.
 
-## Structures and Unions
+**Syntax:**
+
+```c
+data_type *pointer_name;
+```
+
+- The **`data_type`** of the variable that the pointer will point to.
+
+- `*` indicates it’s a pointer.
+
+- `pointer_name` stores the address of an integer variable.
+
+**Example:**
+
+```c
+int *pointer_name;    // Pointer to an integer
+char *pointer_name;   // Pointer to a character
+float *pointer_name;  // Pointer to a float
+```
+
+Instead of holding a data value, it holds the **memory address** of a variable. Here,
+
+- `&` symbol is used to get the address of the variable.
+- `*` symbol is used to get the value of the variable that the pointer is pointing to.
+
+**Assigning a Value to a Pointer**
+
+Pointers are assigned the address of a variable using the address-of operator (`&`).
+
+**Example:**
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int *p;
+    p = &a;  // Assign the address of 'a' to pointer 'p'
+
+    // Output information
+    printf("Value of a: %d\n", a);
+    printf("Address of a: %p\n", &a);
+    printf("Pointer p stores address: %p\n", p);
+    printf("Value pointed by p (*p): %d\n", *p);
+
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Value of a: 10
+Address of a: 0x7ffee8e73abc      // Actual output may vary
+Pointer p stores address: 0x7ffee8e73abc
+Value pointed by p (*p): 10
+```
+
+**Accessing the Value at the Pointer Address**
+
+To access or modify the value stored at the memory location pointed to by a pointer, you use the dereference operator (`*`).
+
+**Example:**
+
+```c
+#include <stdio.h>
+int main(){
+   int a = 10;
+   int *p = &a;
+
+   printf("Value of a: %d\n", a);
+   printf("Value of a via pointer: %d\n", *p);
+
+   *p = 20;  // Modify the value of 'a' through the pointer
+   printf("New value of a: %d\n", a);
+
+   return 0;
+}
+```
+
+**Output:**
+
+```c
+Value of a: 10
+Value of a via pointer: 10
+New value of a: 20
+```
+
+### Pointer Arithmetic
+
+Pointers can be incremented or decremented, and can be used in arithmetic operations to navigate through arrays or other memory structures.
+
+**Example:**
+
+```c
+#include <stdio.h>
+int main(){
+
+   int arr[] = {10, 20, 30, 40, 50};
+   int *p = arr;  // Points to the first element of the array
+
+   printf("%d\n", *p);
+   p++;  // Move to the next element in the array
+   printf("%d\n", *p);
+   return 0;
+}
+```
+
+**Output:**
+
+```c
+10
+20
+```
+
+### Pointers and Arrays
+
+Pointers and arrays are closely related in C. The name of an array is actually a constant pointer to the first element of the array.
+
+**Example:**
+
+```c
+#include <stdio.h>
+int main(){
+
+   int arr[5] = {10, 20, 30, 40, 50};
+   int *p = arr;
+
+   for (int i = 0; i < 5; i++) {
+       printf("Element %d: %d\n", i, *(p + i));
+       // Accessing array elements via pointer
+   }
+   return 0;
+}
+```
+
+**Output:**
+
+```c
+  Element 0: 10
+  Element 1: 20
+  Element 2: 30
+  Element 3: 40
+  Element 4: 50
+```
+
+### Pointers to Pointers
+
+A pointer can also point to another pointer, creating multiple levels of indirection.
+
+**Example:**
+
+```c
+#include <stdio.h>
+int main(){
+      int a = 10;
+   int *p = &a;
+   int **pp = &p;
+
+      printf("Value of a: %d\n", **pp);
+
+      return 0;
+}
+```
+
+**Output:**
+
+```c
+Value of a: 10
+```
+
+### Dynamic Memory Allocation (Pointer)
+
+Pointers are essential for dynamic memory allocation in C, using functions like `malloc`, `calloc`, `realloc`, and `free`.
+
+**Example:**
+
+```c
+#include <stdio.h>
+int main(){
+
+   int *p;
+   p = (int *)malloc(5 * sizeof(int));
+   // Allocates memory for an array of 5 integers
+
+   for (int i = 0; i < 5; i++) {
+       p[i] = i * 10;  // Initialize array elements
+   }
+
+   for (int i = 0; i < 5; i++) {
+       printf("%d ", p[i]);
+   }
+
+   free(p);  // Free the allocated memory
+
+      return 0;
+}
+```
+
+**Output:**
+
+```c
+0 10 20 30 40
+```
+
+### Function Pointers
+
+Pointers can also be used to point to functions, allowing for dynamic function calls and passing functions as arguments.
+
+**Example:**
+
+```c
+#include <stdio.h>
+
+void display(int n) {
+    printf("Number: %d\n", n);
+}
+
+int main() {
+    void (*funcPtr)(int);
+    // Declare a pointer to a function that takes an int and returns void
+
+    funcPtr = display;     // Assign function 'display' to the pointer
+
+    funcPtr(5);  // Call the function using the pointer
+
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Number: 5
+```
+
+### Why Pointer?
+
+- Pointers are powerful features in C/C++ that set them apart from languages like Java and Python.
+
+- They enable efficient memory management, making software faster and more resource-aware.
+
+- However, overusing pointers can make code harder to understand and maintain.
+
+  <!-- START "Jump to Top"-->
+  <p align="right">
+    <a href="#table-of-contents">Jump to Top ▲</a>
+  </p>
+  <!-- END "Jump to Top" -->
+
+## Structure, Union and Enum
+
+C provides powerful user-defined data types that help group different data under one name. These include:
+
+- `struct` → Structure
+- `union` → Union
+- `enum` → Enumeration
+
+### Structure
+
+A **structure** is a user-defined data type in C that allows grouping variables of different types under one name.
+
+**Syntax:**
+
+```c
+struct StructName {
+    datatype member1;
+    datatype member2;
+    ...
+};
+```
+
+**Example:**
+
+```c
+#include <stdio.h>
+
+struct Person {
+    char name[50];
+    int age;
+};
+
+int main() {
+    struct Person p1 = {"Alice", 25};
+
+    printf("Name: %s\n", p1.name);
+    printf("Age: %d\n", p1.age);
+
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Name: Alice
+Age: 25
+```
+
+### Union
+
+A **union** is like a structure, but all members **share the same memory location.** This saves memory but only one member can hold a value at any time.
+
+**Syntax:**
+
+```c
+union UnionName {
+    datatype member1;
+    datatype member2;
+    ...
+};
+```
+
+**Example:**
+
+```c
+#include <stdio.h>
+
+union Data {
+    int i;
+    float f;
+};
+
+int main() {
+    union Data d;
+    d.i = 10;
+
+    printf("d.i = %d\n", d.i);
+
+    d.f = 3.14;
+    printf("d.f = %.2f\n", d.f);
+
+    // d.i is now overwritten
+    printf("d.i after setting d.f = %d\n", d.i);
+
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+d.i = 10
+d.f = 3.14
+d.i after setting d.f = 1078523331   // Undefined result (due to memory sharing)
+```
+
+### Enum
+
+An **enum (enumeration)** is a user-defined data type that assigns **names to a set of integer constants.**
+
+**Syntax:**
+
+```c
+enum EnumName {CONST1, CONST2, CONST3, ...};
+```
+
+By default, `CONST1 = 0`, `CONST2 = 1`, etc.
+
+**Example:**
+
+```c
+#include <stdio.h>
+
+enum Weekday { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
+
+int main() {
+    enum Weekday today = Friday;
+
+    printf("Numeric value of Friday: %d\n", today);
+
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Numeric value of Friday: 5
+```
+
+💡 You can also manually assign custom values to enum constants:
+
+```c
+enum Color { Red = 1, Green = 3, Blue = 5 };
+```
 
 <!-- START "Jump to Top"-->
 <p align="right">
@@ -1802,6 +2591,299 @@ Would you like to cover **pointer and array/string relationships** next?
 
 ## Dynamic Memory Allocation
 
+Dynamic memory allocation allows you to **allocate memory at runtime** using pointers.  
+Unlike static memory allocation (fixed size), dynamic memory can **grow or shrink as needed** while the program is running.
+
+**Dynamic Memory Functions**
+
+| Function    | Description                                        |
+| ----------- | -------------------------------------------------- |
+| `malloc()`  | Allocates a block of memory                        |
+| `calloc()`  | Allocates memory and initializes all bytes to zero |
+| `realloc()` | Resizes previously allocated memory block          |
+| `free()`    | Frees allocated memory to avoid memory leaks       |
+
+### `malloc()` – Memory Allocation
+
+The `malloc()` function in C is used to **dynamically allocate memory** at runtime from the heap.  
+It stands for **Memory Allocation**.
+
+- It returns a `void *` (pointer to void), which should be **typecast** to the appropriate type.
+- The allocated memory contains **garbage values** (uninitialized).
+
+**Syntax:**
+
+```c
+ptr = (castType *) malloc(size);
+```
+
+**Example:**
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *arr;
+    arr = (int *)malloc(3 * sizeof(int));  // allocate memory for 3 integers
+
+    if (arr == NULL) {
+        printf("Memory not allocated.\n");
+        return 1;
+    }
+
+    arr[0] = 10; arr[1] = 20; arr[2] = 30;
+
+    for (int i = 0; i < 3; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    free(arr);  // free the allocated memory
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+10 20 30
+```
+
+### `calloc()` – Contiguous Allocation
+
+The `calloc()` function in C is used to **dynamically allocate memory** at runtime — just like `malloc()`, but with two key differences:
+
+- It allocates **contiguous memory blocks**.
+- It **initializes** all allocated memory to **zero**.
+
+**Syntax:**
+
+```c
+ptr = (castType *) calloc(n, size);
+```
+
+**Example:**
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *arr;
+    arr = (int *)calloc(3, sizeof(int));  // allocates and initializes to 0
+
+    if (arr == NULL) {
+        printf("Memory not allocated.\n");
+        return 1;
+    }
+
+    for (int i = 0; i < 3; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    free(arr);
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+0 0 0
+```
+
+### `realloc()` – Reallocate Memory
+
+The `realloc()` function in C is used to **resize previously allocated memory** (via `malloc()` or `calloc()`), either increasing or decreasing its size.
+
+- It avoids the need to manually allocate a new block and copy data.
+- Contents up to the **minimum of old and new sizes** are preserved.
+
+**Syntax:**
+
+```c
+ptr = realloc(ptr, newSize);
+```
+
+**Example:**
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *arr = malloc(2 * sizeof(int));
+    arr[0] = 5; arr[1] = 10;
+
+    arr = realloc(arr, 4 * sizeof(int));
+    arr[2] = 15; arr[3] = 20;
+
+    for (int i = 0; i < 4; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    free(arr);
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+5 10 15 20
+```
+
+### `free()` – Release Memory
+
+The `free()` function is used to **release dynamically allocated memory** back to the system once you're done using it.
+
+- Prevents **memory leaks**
+- Only used for memory allocated with `malloc()`, `calloc()`, or `realloc()`
+
+**Example:**
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *arr;
+    int n = 5;
+
+    // Allocate memory for 5 integers
+    arr = (int *)malloc(n * sizeof(int));
+
+    if (arr == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+    // Assign values
+    for (int i = 0; i < n; i++) {
+        arr[i] = (i + 1) * 10;
+    }
+
+    // Print values
+    printf("Values in the array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    // Free the allocated memory
+    free(arr);
+    printf("Memory successfully freed.\n");
+
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Values in the array: 10 20 30 40 50
+Memory successfully freed.
+```
+
+<!-- START "Jump to Top"-->
+<p align="right">
+  <a href="#table-of-contents">Jump to Top ▲</a>
+</p>
+<!-- END "Jump to Top" -->
+
+## Typedef and Type Casting
+
+Here’s a well-structured explanation of `typedef` and `Type Casting`:
+
+### Typedef
+
+The `typedef` keyword allows you to create **new names (aliases)** for existing data types. It improves code readability and portability.
+
+**Syntax:**
+
+```c
+typedef existing_type new_name;
+```
+
+**Example: Using `typedef`**
+
+```c
+#include <stdio.h>
+
+typedef unsigned int uint;
+
+int main() {
+    uint a = 10;
+    printf("Value of a: %u\n", a);
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Value of a: 10
+```
+
+### Type Casting in C
+
+Type casting allows you to **convert one data type into another**.
+There are two types:
+
+1. **Implicit (automatic)** – Done by compiler
+2. **Explicit (manual)** – Done by programmer
+
+**Syntax:**
+
+```c
+(type) expression;
+```
+
+**Example: Integer to Float**
+
+```c
+#include <stdio.h>
+
+int main() {
+    int a = 5, b = 2;
+    float result;
+
+    result = (float)a / b;
+    printf("Result: %.2f\n", result);
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Result: 2.50
+```
+
+Without casting, `a / b` would result in integer division (`2` instead of `2.50`).
+
+**Example 2: Float to Integer**
+
+```c
+#include <stdio.h>
+
+int main() {
+    float num = 7.89;
+    int intNum = (int)num;
+
+    printf("Original: %.2f\n", num);
+    printf("Converted to int: %d\n", intNum);
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Original: 7.89
+Converted to int: 7
+```
+
 <!-- START "Jump to Top"-->
 <p align="right">
   <a href="#table-of-contents">Jump to Top ▲</a>
@@ -1809,6 +2891,101 @@ Would you like to cover **pointer and array/string relationships** next?
 <!-- END "Jump to Top" -->
 
 ## File Handling
+
+File handling in C allows you to **create**, **read**, **write**, and **manipulate files** on disk — making your programs more powerful and persistent.
+
+### Types of File Access Modes
+
+| Mode   | Description                                                         |
+| ------ | ------------------------------------------------------------------- |
+| `"r"`  | Open for reading. Error if file doesn't exist.                      |
+| `"w"`  | Open for writing. Creates file if not exists. Overwrites if exists. |
+| `"a"`  | Open for appending. Creates if not exists. Writes at end of file.   |
+| `"r+"` | Open for reading and writing. File must exist.                      |
+| `"w+"` | Open for reading and writing. Overwrites file.                      |
+| `"a+"` | Open for reading and appending. Creates if not exists.              |
+
+### Basic File Operations
+
+| Function               | Purpose                        |
+| ---------------------- | ------------------------------ |
+| `fopen()`              | Opens a file                   |
+| `fclose()`             | Closes an opened file          |
+| `fprintf()`            | Writes formatted data to file  |
+| `fscanf()`             | Reads formatted data from file |
+| `fgets()` / `fputs()`  | String-based file I/O          |
+| `fread()` / `fwrite()` | Binary I/O                     |
+
+**Example: Writing to a File**
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("output.txt", "w");  // Open file for writing
+
+    if (fp == NULL) {
+        printf("Error opening file!\n");
+        return 1;
+    }
+
+    fprintf(fp, "Hello, File Handling in C!\n");
+    fclose(fp);
+
+    printf("Data written successfully.\n");
+
+    return 0;
+}
+```
+
+**Output: (Console)**
+
+```c
+Data written successfully.
+```
+
+**Output: File (`output.txt`)**
+
+```c
+Hello, File Handling in C!
+```
+
+**Example: Reading from a File**
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *fp = fopen("output.txt", "r");  // Open file for reading
+    char buffer[100];
+
+    if (fp == NULL) {
+        printf("File not found!\n");
+        return 1;
+    }
+
+    while (fgets(buffer, sizeof(buffer), fp)) {
+        printf("%s", buffer);  // Print each line
+    }
+
+    fclose(fp);
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Hello, File Handling in C!
+```
+
+### File I/O Error Handling
+
+- Always check if `fopen()` returns `NULL`.
+
+- Always call `fclose()` to free resources.
+
+- Ensure proper file permissions (read/write access).
 
 <!-- START "Jump to Top"-->
 <p align="right">
@@ -1818,6 +2995,232 @@ Would you like to cover **pointer and array/string relationships** next?
 
 ## Preprocessor Directives
 
+Preprocessor directives are instructions to the C preprocessor that **prepare the code** before the actual compilation begins. They are used to **modify** or **define certain aspects** of the code before the program is compiled.
+
+Preprocessor directives begin with a `#` symbol and are **not terminated by a semicolon**.
+
+**Common Preprocessor Directives**
+
+| Directive            | Description                                                          |
+| -------------------- | -------------------------------------------------------------------- |
+| `#include`           | Includes header files (standard or user-defined) into the program    |
+| `#define`            | Defines macros or constants that are replaced throughout the code    |
+| `#undef`             | Undefines a macro (removes its definition)                           |
+| `#ifdef` / `#ifndef` | Conditional compilation — checks if a macro is defined or not        |
+| `#else` / `#elif`    | Specifies alternate compilation paths for conditional compilation    |
+| `#endif`             | Ends a conditional preprocessor block                                |
+| `#if`                | Evaluates a condition (true/false) and includes code accordingly     |
+| `#pragma`            | Provides additional instructions to the compiler (compiler-specific) |
+
+### `#include` – Include Files
+
+The `#include` directive is used to include standard or custom header files into the program.
+
+**Syntax:**
+
+```c
+#include <header_file>   // Standard library headers
+#include "header_file"   // User-defined header files
+```
+
+**Example:**
+
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Hello, World!
+```
+
+`stdio.h` is a standard header file included via `<>`.
+
+### `#define` – Define Macros
+
+The `#define` directive defines a `macro` or `constant value` that is replaced by the preprocessor.
+
+**Syntax:**
+
+```c
+#define MACRO_NAME value
+```
+
+**Example:**
+
+```c
+#include <stdio.h>
+
+#define PI 3.14  // Defining a constant
+
+int main() {
+    float area = PI * 5 * 5;  // Using the defined constant
+    printf("Area of circle: %.2f\n", area);
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Area of circle: 78.50
+```
+
+### `#undef` – Undefine Macros
+
+The `#undef` directive is used to `remove a macro definition.`
+
+**Syntax:**
+
+```c
+#undef MACRO_NAME
+```
+
+**Example:**
+
+```c
+#include <stdio.h>
+
+#define MAX 100
+
+int main() {
+    printf("Max value: %d\n", MAX);
+    #undef MAX  // Undefine MAX
+    // printf("Max value: %d\n", MAX);  // Error: MAX is undefined
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Max value: 100
+```
+
+### `#ifdef` / `#ifndef` – Conditional Compilation
+
+The `#ifdef` (if defined) and `#ifndef` (if not defined) directives allow you to conditionally include code based on whether a macro is defined.
+
+**Syntax:**
+
+```c
+#ifdef MACRO_NAME
+    // Code to include if the macro is defined
+#endif
+
+#ifndef MACRO_NAME
+    // Code to include if the macro is not defined
+#endif
+```
+
+**Example:**
+
+```c
+#include <stdio.h>
+
+#define DEBUG 1
+
+int main() {
+    #ifdef DEBUG
+        printf("Debugging is enabled.\n");
+    #else
+        printf("Debugging is not enabled.\n");
+    #endif
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Debugging is enabled.
+```
+
+### `#else` / `#elif` – Conditional Compilation Else
+
+The `#else` and `#elif` directives allow you to specify alternate paths for conditional compilation.
+
+**Syntax:**
+
+```c
+# ifdef MACRO_NAME
+
+    // Code if macro is defined
+
+# elif MACRO_NAME_2
+
+    // Code if the second macro is defined
+
+# else
+
+    // Code if none of the above conditions are true
+
+# endif
+```
+
+**Example:**
+
+```c
+# include <stdio.h>
+
+# define VERBOSE 0
+
+int main() {
+
+# if VERBOSE
+
+printf("Verbose mode is enabled.\n");
+
+# else
+
+printf("Verbose mode is disabled.\n");
+
+# endif
+
+return 0;
+}
+```
+
+**Output:**
+
+```c
+Verbose mode is disabled.
+```
+
+### `#pragma` – Compiler Specific Instructions
+
+The `#pragma` directive provides additional instructions to the compiler, often used to manage compiler warnings or optimizations. The use of `#pragma` can vary between compilers.
+
+**Example:**
+
+```c
+#include <stdio.h>
+
+#pragma GCC optimize("O3")  // Optimize for maximum speed
+
+int main() {
+    for (int i = 0; i < 1000000; i++);
+    printf("Loop completed with optimization.\n");
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Loop completed with optimization.
+```
+
+> [!CAUTION]
+>
+> Actual speed improvement may not be visible in such a small loop but is useful in performance-critical code.
+
 <!-- START "Jump to Top"-->
 <p align="right">
   <a href="#table-of-contents">Jump to Top ▲</a>
@@ -1826,49 +3229,99 @@ Would you like to cover **pointer and array/string relationships** next?
 
 ## Error Handling
 
+Error handling refers to the **process of responding to and recovering from errors** in a program.
+
+C does not have built-in exception handling like modern languages (e.g., try-catch), so error detection and response are done using:
+
+- Return values (status codes)
+- `errno` (global error variable)
+- `perror()` and `strerror()` for error messages
+
+**Common Techniques for Error Handling in C**
+
+| Method       | Description                                               |
+| ------------ | --------------------------------------------------------- |
+| Return Codes | Functions return `0` or a non-zero code to indicate error |
+| `errno`      | Global variable set by system/library calls on error      |
+| `perror()`   | Prints a human-readable error message to `stderr`         |
+| `strerror()` | Returns a string describing an error code (`errno`)       |
+
+**Example: Return Code Check**
+
+```c
+#include <stdio.h>
+
+int divide(int a, int b, int *result) {
+    if (b == 0) return 1; // Error: division by zero
+    *result = a / b;
+    return 0; // Success
+}
+
+int main() {
+    int res;
+    if (divide(10, 0, &res)) {
+        printf("Error: Division by zero is not allowed.\n");
+    } else {
+        printf("Result: %d\n", res);
+    }
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Error: Division by zero is not allowed.
+```
+
+**Example: Using `errno`, `perror()`, and `strerror()`**
+
+```c
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+
+int main() {
+    FILE *fp = fopen("nonexistent.txt", "r");
+
+    if (fp == NULL) {
+        perror("Error opening file");  // Print error to stderr
+        printf("Error Code: %d\n", errno);
+        printf("Error Description: %s\n", strerror(errno));
+    }
+
+    return 0;
+}
+```
+
+**Output:**
+
+```c
+Error opening file: No such file or directory
+Error Code: 2
+Error Description: No such file or directory
+```
+
+> [!IMPORTANT]
+>
+> - Always check the return value of functions like `fopen()`, `malloc()`, `read()`, etc.
+> - Use `perror()` or `strerror(errno)` to understand the error.
+> - Avoid relying on `errno` if the function you're calling does not explicitly set it.
+
 <!-- START "Jump to Top"-->
 <p align="right">
   <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
 
-## Advanced Topics
+## Practice Problems and Solutions
+
+This section contains a curated set of common C programming problems with complete solutions and sample outputs. It is designed to reinforce core programming concepts such as conditionals, loops, functions, arrays, pointers, and memory management through hands-on practice.
+
+Want to explore the code? **[Click this Repo](https://github.com/msa-iqbal/c-code-solutions)** to dive into each solution and start learning by doing!
 
 <!-- START "Jump to Top"-->
 <p align="right">
   <a href="#table-of-contents">Jump to Top ▲</a>
 </p>
 <!-- END "Jump to Top" -->
-
-## Data Structures in C
-
-<!-- START "Jump to Top"-->
-<p align="right">
-  <a href="#table-of-contents">Jump to Top ▲</a>
-</p>
-<!-- END "Jump to Top" -->
-
-## Common Mistakes and Best Practices
-
-<!-- START "Jump to Top"-->
-<p align="right">
-  <a href="#table-of-contents">Jump to Top ▲</a>
-</p>
-<!-- END "Jump to Top" -->
-
-## Practice Problems and Projects
-
-<!-- START "Jump to Top"-->
-<p align="right">
-  <a href="#table-of-contents">Jump to Top ▲</a>
-</p>
-<!-- END "Jump to Top" -->
-
-## Appendix: Reference Links and Resources
-
-<!-- START "Jump to Top"-->
-<p align="right">
-  <a href="#table-of-contents">Jump to Top ▲</a>
-</p>
-<!-- END "Jump to Top" -->
-````
