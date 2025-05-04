@@ -253,7 +253,7 @@ int main() {
 
 **Output:**
 
-```markdown
+```
 Global: 10
 Local: 5
 Static: 1
@@ -1017,9 +1017,15 @@ int main() {
     for (int i = 1; i <= 10; i++) {
         if (i == 5)
             break;
-        printf("%d ", i);     // Output: 1 2 3 4
+        printf("%d ", i);
     }
 }
+```
+
+**Output:**
+
+```
+1 2 3 4
 ```
 
 **Example (continue):**
@@ -1032,9 +1038,45 @@ int main() {
     for (int i = 1; i <= 5; i++) {
         if (i == 3)
             continue;
-        printf("%d ", i);   // Output: 1 2 4 5
+        printf("%d ", i);
     }
 }
+```
+
+**Output:**
+
+```
+1 2 4 5
+```
+
+**Example (goto):**
+
+```c
+#include <stdio.h>
+
+int main() {
+    int number;
+
+    printf("Enter a positive number: ");
+    scanf("%d", &number);
+
+    if (number < 0)
+        goto error;  // Jump to the error label
+
+    printf("You entered: %d\n", number);
+    return 0;
+
+error:
+    printf("Error: Negative number entered!\n");
+    return 1;
+}
+```
+
+**Output:**
+
+```
+Enter a positive number: -5
+Error: Negative number entered!
 ```
 
 <!-- START "Jump to Top"-->
@@ -1144,7 +1186,7 @@ int add(int a, int b) {
 
 **Output:**
 
-```markdown
+```
 Sum = 30
 ```
 
@@ -1165,7 +1207,7 @@ int main() {
 
 **Output:**
 
-```markdown
+```
 Hello, World!
 ```
 
@@ -1187,7 +1229,7 @@ int main() {
 
 **Output:**
 
-```markdown
+```
 Sum = 9
 ```
 
@@ -1210,7 +1252,7 @@ int multiply(int x, int y) {
 
 **Output:**
 
-```markdown
+```
 Result = 12
 ```
 
@@ -1238,7 +1280,7 @@ int main() {
 
 **Output:**
 
-```markdown
+```
 Factorial of 5 = 120
 ```
 
@@ -1278,10 +1320,6 @@ Example: `printf()`, `scanf()`, `strlen()`, `malloc()`, etc.
 **Header Files:**
 
 You don't need to define these functions, but you must include the appropriate header files.
-
-_Example: `#include <stdio.h>` (for `printf()`)._
-
-Some Header File List:
 
 - `stdio.h` (Standard input-output.header):
 
@@ -1621,7 +1659,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Enter your name: Alice
 Hello, Alice!
 ```
@@ -1646,7 +1684,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Enter your full name: Alice Johnson
 Your name is:
 Alice Johnson
@@ -1676,7 +1714,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Enter your full name: Alice Johnson
 Hello, Alice Johnson
 ```
@@ -1734,7 +1772,7 @@ int main() {
 
 **Output:**
 
-```markdown
+```
 First number: 10
 Third number: 30
 ```
@@ -1804,7 +1842,7 @@ int main() {
 
 **Output:**
 
-```markdown
+```
 10 20 30 40 50
 ```
 
@@ -1869,7 +1907,7 @@ int main() {
 
 **Output:**
 
-```markdown
+```
 Access Single Element: 7
 
 Matrix Elements:
@@ -1972,7 +2010,7 @@ int main() {
 
 **Output:**
 
-```markdown
+```
 Access Single Element: 24
 
 Plane 0:
@@ -2050,7 +2088,7 @@ int main() {
 
 **Output:**
 
-```markdown
+```
 Sum = 15
 ```
 
@@ -2095,7 +2133,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Array elements: 10 20 30 40 50
 ```
 
@@ -2129,7 +2167,7 @@ int main() {
 
 **Output:**
 
-```markdown
+```
 Element 1: 10
 Element 2: 20
 Element 3: 30
@@ -2169,7 +2207,7 @@ int main() {
 
 **Output:**
 
-```markdown
+```
 Element [0][0]: 1
 Element [0][1]: 2
 Element [0][2]: 3
@@ -2245,7 +2283,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Value of a: 10
 Address of a: 0x7ffee8e73abc      // Actual output may vary
 Pointer p stores address: 0x7ffee8e73abc
@@ -2276,7 +2314,7 @@ int main(){
 
 **Output:**
 
-```c
+```
 Value of a: 10
 Value of a via pointer: 10
 New value of a: 20
@@ -2304,7 +2342,7 @@ int main(){
 
 **Output:**
 
-```c
+```
 10
 20
 ```
@@ -2332,7 +2370,7 @@ int main(){
 
 **Output:**
 
-```c
+```
   Element 0: 10
   Element 1: 20
   Element 2: 30
@@ -2361,7 +2399,7 @@ int main(){
 
 **Output:**
 
-```c
+```
 Value of a: 10
 ```
 
@@ -2395,7 +2433,7 @@ int main(){
 
 **Output:**
 
-```c
+```
 0 10 20 30 40
 ```
 
@@ -2426,7 +2464,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Number: 5
 ```
 
@@ -2488,7 +2526,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Name: Alice
 Age: 25
 ```
@@ -2535,7 +2573,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 d.i = 10
 d.f = 3.14
 d.i after setting d.f = 1078523331   // Undefined result (due to memory sharing)
@@ -2571,7 +2609,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Numeric value of Friday: 5
 ```
 
@@ -2642,7 +2680,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 10 20 30
 ```
 
@@ -2685,7 +2723,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 0 0 0
 ```
 
@@ -2726,7 +2764,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 5 10 15 20
 ```
 
@@ -2777,7 +2815,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Values in the array: 10 20 30 40 50
 Memory successfully freed.
 ```
@@ -2818,7 +2856,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Value of a: 10
 ```
 
@@ -2853,7 +2891,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Result: 2.50
 ```
 
@@ -2876,7 +2914,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Original: 7.89
 Converted to int: 7
 ```
@@ -2937,7 +2975,7 @@ int main() {
 
 **Output: (Console)**
 
-```c
+```
 Data written successfully.
 ```
 
@@ -2972,7 +3010,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Hello, File Handling in C!
 ```
 
@@ -3033,7 +3071,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Hello, World!
 ```
 
@@ -3065,7 +3103,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Area of circle: 78.50
 ```
 
@@ -3096,7 +3134,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Max value: 100
 ```
 
@@ -3135,7 +3173,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Debugging is enabled.
 ```
 
@@ -3186,7 +3224,7 @@ return 0;
 
 **Output:**
 
-```c
+```
 Verbose mode is disabled.
 ```
 
@@ -3210,7 +3248,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Loop completed with optimization.
 ```
 
@@ -3267,7 +3305,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Error: Division by zero is not allowed.
 ```
 
@@ -3293,7 +3331,7 @@ int main() {
 
 **Output:**
 
-```c
+```
 Error opening file: No such file or directory
 Error Code: 2
 Error Description: No such file or directory
